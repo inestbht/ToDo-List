@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E479590285017C00032D158 /* ToDoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47958F285017C00032D158 /* ToDoItems.swift */; };
 		8E4795922850218F0032D158 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4795912850218F0032D158 /* LocalNotificationManager.swift */; };
+		8E47959428503AEA0032D158 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47959328503AEA0032D158 /* UIViewController+alert.swift */; };
 		8E5AA551284F14A600C222E0 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5AA550284F14A600C222E0 /* ListTableViewCell.swift */; };
 		8E5B7018284D88B20057ACFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B7017284D88B20057ACFA /* AppDelegate.swift */; };
 		8E5B701A284D88B20057ACFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B7019284D88B20057ACFA /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		8E47958F285017C00032D158 /* ToDoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItems.swift; sourceTree = "<group>"; };
 		8E4795912850218F0032D158 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		8E47959328503AEA0032D158 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		8E5AA550284F14A600C222E0 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		8E5B7014284D88B20057ACFA /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5B7017284D88B20057ACFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				8E5B7017284D88B20057ACFA /* AppDelegate.swift */,
 				8E5B7019284D88B20057ACFA /* SceneDelegate.swift */,
 				8E4795912850218F0032D158 /* LocalNotificationManager.swift */,
+				8E47959328503AEA0032D158 /* UIViewController+alert.swift */,
 				8EB792B9284E7F8900C4B74B /* ToDoItem.swift */,
 				8E47958F285017C00032D158 /* ToDoItems.swift */,
 				8E5B701B284D88B20057ACFA /* ToDoListViewController.swift */,
@@ -156,6 +159,7 @@
 				8E5B701C284D88B20057ACFA /* ToDoListViewController.swift in Sources */,
 				8E479590285017C00032D158 /* ToDoItems.swift in Sources */,
 				8E5B7018284D88B20057ACFA /* AppDelegate.swift in Sources */,
+				8E47959428503AEA0032D158 /* UIViewController+alert.swift in Sources */,
 				8EB792BA284E7F8900C4B74B /* ToDoItem.swift in Sources */,
 				8E5B708C284DAEB40057ACFA /* ToDoDetailTableViewController.swift in Sources */,
 				8E5B701A284D88B20057ACFA /* SceneDelegate.swift in Sources */,
