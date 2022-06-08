@@ -7,9 +7,24 @@
 //
 
 import Foundation
+import UserNotifications
 
 class ToDoItems {
     var itemsArray: [ToDoItem] = []
+    
+    func loadData(completed: @escaping ()->() ) {
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentURL = directoryURL.appendingPathComponent("todos").appendingPathExtension("json")
+
+        guard let data = try? Data(contentsOf: documentURL) else {return}
+        let jsonDecoder = JSONDecoder()
+        do {
+            itemsArray = try jsonDecoder.decode(Array<ToDoItem>.self, from: data)
+        } catch {
+            print("😡 ERROR: Could not load data \(error.localizedDescription)")
+        }
+        completed()
+    }
     
     func saveData() {
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -22,20 +37,22 @@ class ToDoItems {
         } catch {
             print("😡 ERROR: Could not save data \(error.localizedDescription)")
         }
+        setNofications()
     }
-    
-    func loadData(completed: @escaping ()->() ) {
-        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let documentURL = directoryURL.appendingPathComponent("todos").appendingPathExtension("json")
 
-        guard let data = try? Data(contentsOf: documentURL) else {return}
-        let jsonDecoder = JSONDecoder()
-        do {
-            itemsArray = try jsonDecoder.decode(Array<ToDoItem>.self, from: data)
-            
-        } catch {
-            print("😡 ERROR: Could not load data \(error.localizedDescription)")
+    func setNofications() {
+        guard itemsArray.count > 0 else {
+            return
         }
-        completed()
+        // remove all notifications
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
+        // and let's re-create them with the updated data that we just saved
+        for index in 0..<itemsArray.count {
+            if itemsArray[index].reminderSet {
+                let toDoItem = itemsArray[index]
+                itemsArray[index].notificationID = LocalNotificationManager.setCalendarNotifications(title: toDoItem.name, subtitle: "", body: toDoItem.notes, badgeNumber: nil, sound: .default, date: toDoItem.date)
+            }
+        }
     }
 }
