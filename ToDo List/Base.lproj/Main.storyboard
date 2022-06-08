@@ -133,14 +133,29 @@
                                                         <action selector="reminderSwitchChanged:" destination="7dk-mS-hSd" eventType="valueChanged" id="Se1-xp-zRM"/>
                                                     </connections>
                                                 </switch>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jhv-OO-RIq">
+                                                    <rect key="frame" x="122" y="0.0" width="182" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="182" id="QhX-r1-JuW"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="7dk-mS-hSd" eventType="valueChanged" id="b96-XP-iBW"/>
+                                                    </connections>
+                                                </datePicker>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/12, 12:12:12 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-3X-zwU">
-                                                    <rect key="frame" x="111" y="11" width="193" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="111" y="0.0" width="193" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jhv-OO-RIq" secondAttribute="trailing" constant="16" id="NhI-hg-bPn"/>
+                                                <constraint firstItem="jhv-OO-RIq" firstAttribute="top" secondItem="wv8-9v-mR6" secondAttribute="top" id="csH-BD-H3X"/>
+                                                <constraint firstAttribute="bottom" secondItem="jhv-OO-RIq" secondAttribute="bottom" id="kPD-7Y-oG9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="WG8-78-bIS">
@@ -204,6 +219,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="compactDatePicker" destination="jhv-OO-RIq" id="CkK-TU-bQ0"/>
                         <outlet property="dateLabel" destination="58B-3X-zwU" id="Vbz-A5-42R"/>
                         <outlet property="datePicker" destination="Ewg-GW-Lax" id="Jxx-Di-hZy"/>
                         <outlet property="nameField" destination="1Dd-BH-aLr" id="gHc-Je-6dg"/>
